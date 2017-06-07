@@ -34,10 +34,13 @@ public class BimestralApplicationTests {
             Direccion dir=repoDireccion.findOne(1L);
                 assertEquals("Ecatepec",dir.getMunicipio());
             }
-            @Test
+           // @Test
             public void buscarTodos() throws Exception{
             
            ArrayList<Direccion> dir=(ArrayList <Direccion>) repoDireccion.findAll();
                 assertEquals(1,dir.size());
             }
+            
+            
+            
 }
