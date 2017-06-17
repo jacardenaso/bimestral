@@ -7,6 +7,26 @@
 
 //Vamos a hacer el request a nuestro servicio usando ajax con jquery
 
+    
+    $.ajax({
+            url:'direccion',
+            type:'get',
+            success:function(json){
+                
+                
+                console.log('Numero de elementos encontrados' + json.length);
+                for(var i=0;i<json.length;i++){
+                    
+                    $("#tablita").append(("<tr><td>"+json[i].id+" </td><td>"+json[i].numero+"  </td><td>"+json[i].calle+"  </td><td> "+json[i].cp+" </td> <td>"+json[i].municipio+"</td></tr>"));
+                    
+                }
+            } 
+ 
+        
+    });
+    
+    
+
 $("#guardarDireccion").click(function (){
         //Aplicamos el metodo post usando la uri del servicio
         var numero=$("#numero").val();
@@ -19,7 +39,7 @@ $("#guardarDireccion").click(function (){
             
             
         
-})
+});
 });
     
     
@@ -38,5 +58,20 @@ $("#buscarPorId").click(function (){
         
 });
 });
+
+
+//$("#actualizar").click(function (){
+ //       //Aplicamos el metodo post usando la uri del servicio
+    //    var id=$("#id").val();
+        
+       // $.ajax({
+          //  type="PUT",
+            //url="direccion/"+id+'/'+numero+'/'+calle+'/'+cp+'/'+
+ 
+        
+                    
+        
+//});
+//});
 
 
